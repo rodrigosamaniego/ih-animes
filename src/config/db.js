@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const connectDB = async() => {
     await mongoose.connect(process.env.MONGODB)
-    Console.log("data base connected")
+    console.log("data base connected")
 }
 
-module.export = connectDB
+module.exports = connectDB
