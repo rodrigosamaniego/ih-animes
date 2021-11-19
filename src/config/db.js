@@ -1,4 +1,4 @@
-const { Console } = require('console')
+// const { Console } = require('console')
 const mongoose = require('mongoose')
 
 const connectDB = async() => {

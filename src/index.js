@@ -7,9 +7,12 @@ require('dotenv').config()
 const path = require("path")
 
 const connectDB= require("./config/db")
+
+const bodyParser = require('body-parser')
 //Middlewares
 
 app.use(express.static(path.join(__dirname, "public")))
+app.use(bodyParser.urlencoded({extended: true}))
 
 //configuración
 app.set('views', path.join(__dirname, "views") )
@@ -22,6 +25,9 @@ connectDB()
 app.get('/', (req, res) =>{
     res.render('index')
 })
+
+//animes
+app.use('/animes', require("./routes/animes.router"))
 
 
 
